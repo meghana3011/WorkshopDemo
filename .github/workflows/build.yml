@@ -3,7 +3,7 @@ on:
   # a pull request. 
   push:
     branches:
-      - staging
+      - master
   pull_request:
       types: [opened, synchronize, reopened]
 name: Main Workflow
@@ -17,6 +17,11 @@ jobs:
         fetch-depth: 0
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
+      with:
+        projectBaseDir: WorkshopDemo/.github/workflows/build.yml
+        
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ 1089c0cf3d536d4d9b93838c82e2b6578637c423 }}
+
+
