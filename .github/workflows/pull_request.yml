@@ -16,4 +16,4 @@ jobs:
         with:
           project: challenge4
           column: To do
-          repo-token: ${{ secrets.CHALLENGE4 }}
+          repo-token: ${{ secrets.GH_TOKEN }}
